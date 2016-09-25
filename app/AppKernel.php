@@ -19,6 +19,9 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new \Dontdrinkandroot\UtilsBundle\DdrUtilsBundle(),
+            new \Dontdrinkandroot\DoctrineBundle\DdrDoctrineBundle(),
             new Dontdrinkandroot\ChattrBundle\DdrChattrBundle(),
         ];
 
