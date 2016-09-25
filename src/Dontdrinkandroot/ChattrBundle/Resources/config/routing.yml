@@ -1,0 +1,3 @@
+ddr_chattr_homepage:
+    path:     /
+    defaults: { _controller: DdrChattrBundle:Default:index }
