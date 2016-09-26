@@ -8,6 +8,10 @@ use FOS\UserBundle\Model\UserManagerInterface;
 
 class Users extends AbstractContainerAwareFixture
 {
+    const USER_1 = 'user-1';
+    const USER_2 = 'user-2';
+    const USER_3 = 'user-3';
+
     /**
      * {@inheritdoc}
      */
@@ -21,12 +25,21 @@ class Users extends AbstractContainerAwareFixture
         $user->setEmail('user1@example.com');
         $user->setPassword('user1');
         $userManager->updateUser($user);
+        $this->referenceRepository->setReference(self::USER_1, $user);
 
         $user = $userManager->createUser();
         $user->setUsername('user2');
         $user->setEmail('user2@example.com');
         $user->setPassword('user2');
         $userManager->updateUser($user);
+        $this->referenceRepository->setReference(self::USER_2, $user);
+
+        $user = $userManager->createUser();
+        $user->setUsername('user3');
+        $user->setEmail('user3@example.com');
+        $user->setPassword('user3');
+        $userManager->updateUser($user);
+        $this->referenceRepository->setReference(self::USER_3, $user);
 
         $user = $userManager->createUser();
         $user->setUsername('admin');
